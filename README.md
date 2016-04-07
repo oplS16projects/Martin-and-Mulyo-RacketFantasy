@@ -30,6 +30,13 @@ The game should run as we intend it to meaning a full working turn based game wh
 ### Evaluation of Results
 How will you know if you are successful? 
 If you include some kind of _quantitative analysis,_ that would be good.
+##Racket Libraries
+(require 2htdp/universe)
+
+(require 2htdp/batch-io)
+
+(require 2htdp/image)
+
 
 ## Architecture Diagram
 <img src="Architecture_digram.jpg">
@@ -40,11 +47,15 @@ The main purpose of this class is to make sure that the player in control can on
 
 ####Territory
 
-Territories have three main responsibilities. First, boundaries, they are here to make sure that you stick with in the game. Second, if another unit is on a territory it knows how to handle it. And last, you keep track of which player owns the territory.
+Territories have three main responsibilities. First, boundaries, they are here to make sure that you stick with in the game. Second, if another unit is on a territory it knows how to handle it. And last, you keep track of which player owns a territory.
 
 ####Units
 
 Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another players’ unit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
+
+## Game Flow
+<img src="game_flow.jpg">
+
 
 ## Schedule
 
@@ -60,19 +71,4 @@ Units main function are to move around the board and attack other enemy units. W
 *Smoother run
 
 ## Group Responsibilities
-
-### Martin Rudzki @MartinRudzki
-*Making the powerpoint slides art
-*Implementing the territory class
-*Implementing the board
-*Drawing the background/UI
-*Drawing the castle
-*Implementing the rules
-
-### Yusuf Mulyo @YusufSM
-*Looking into the library for the game engine
-*Implementing the unit class
-*Implementing the board
-*Drawing the units
-*Implementing the rules
-*Implementing human interaction
+<img src="group_respons.jpg">
