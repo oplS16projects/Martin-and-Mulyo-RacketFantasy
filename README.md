@@ -29,16 +29,24 @@ The game should run as we intend it to meaning a full working turn based game wh
 
 ### Evaluation of Results
 How will you know if you are successful? 
-If you include some kind of _quantitative analysis,_ that would be good.
-##Racket Libraries
+#Criteria
+*Player can only control there units.
+*Player income and terriroy count only increase/decrease on there turn.
+*Player income decrease when income is spent on there units.
+*Units get created properly on appropriate side.
+*Units move.
+*Units can not go out of bounds.
+*Units can not be stacked on a territory.
+*Units cannot move more then they are suppose to.
+*Win condition is met, that means capturing 9 territories.
+
+###Racket Libraries
 (require 2htdp/universe)
-
 (require 2htdp/batch-io)
-
 (require 2htdp/image)
 
 
-## Architecture Diagram
+### Architecture Diagram
 <img src="Architecture_digram.jpg">
 
 #Player
@@ -53,18 +61,20 @@ Territories have three main responsibilities. First, boundaries, they are here t
 
 Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another players’ unit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
 
-## Game Flow
+### Game Flow
 <img src="game_flow.jpg">
 
 
-## Schedule
+### Schedule
 
 ### First Milestone (Fri Apr 15)
 *A complete drawing of the game (background, unit, castle and UI)
 *Working UI
 
 ### Second Milestone (Fri Apr 22)
-*A beta of the game
+*Win condition can be met
+*Units can move on gameboard
+*Currency and Territory numbers are being tracked correctly
 
 ### Final Presentation (last week of semester)
 *Cleaned up most, if not all the bugs in the game
