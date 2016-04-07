@@ -27,22 +27,33 @@ Will it be interactive? Can you show it working? This project involves a live de
 The game should run as we intend it to meaning a full working turn based game where players are able to spawn and control their units. We could call two people up to demonstrate and play the game against each other where they would compete for the nine teretories.
 
 
-### Evaluation of Results
-How will you know if you are successful? 
-#Criteria
+## Evaluation of Results
+### Game Criteria
+
 *Player can only control there units.
+
 *Player income and terriroy count only increase/decrease on there turn.
+
 *Player income decrease when income is spent on there units.
+
 *Units get created properly on appropriate side.
+
 *Units move.
+
 *Units can not go out of bounds.
+
 *Units can not be stacked on a territory.
+
 *Units cannot move more then they are suppose to.
+
 *Win condition is met, that means capturing 9 territories.
+
 
 ###Racket Libraries
 (require 2htdp/universe)
+
 (require 2htdp/batch-io)
+
 (require 2htdp/image)
 
 
@@ -51,7 +62,7 @@ How will you know if you are successful?
 
 ####Player
 
-The main purpose of this class is to make sure that the player in control can only access their items. For example, while spending your currency on units you want to make sure that you are only touching your money and not the other players’ money, even though that would be nice.
+The main purpose of this class is to make sure that the player in control can only access their items. For example, while spending your currency on units you want to make sure that you are only touching your money and not the other players� money, even though that would be nice.
 
 ####Territory
 
@@ -59,7 +70,8 @@ Territories have three main responsibilities. First, boundaries, they are here t
 
 ####Units
 
-Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another players’ unit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
+
+Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another players� unit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
 
 ### Game Flow
 <img src="game_flow.jpg">
@@ -69,15 +81,19 @@ Units main function are to move around the board and attack other enemy units. W
 
 ### First Milestone (Fri Apr 15)
 *A complete drawing of the game (background, unit, castle and UI)
+
 *Working UI
 
 ### Second Milestone (Fri Apr 22)
-*Win condition can be met
-*Units can move on gameboard
-*Currency and Territory numbers are being tracked correctly
+*Win condition can be met.
+
+*Units can move on gameboard.
+
+*Currency and territory numbers are being tracked correctly.
 
 ### Final Presentation (last week of semester)
 *Cleaned up most, if not all the bugs in the game
+
 *Smoother run
 
 ## Group Responsibilities
