@@ -60,15 +60,16 @@ The game should run as we intend it to meaning a full working turn based game wh
 ### Architecture Diagram
 <img src="Architecture_digram.jpg">
 
-#Player
+####Player
 
 The main purpose of this class is to make sure that the player in control can only access their items. For example, while spending your currency on units you want to make sure that you are only touching your money and not the other players� money, even though that would be nice.
 
-#Territory
+####Territory
 
 Territories have three main responsibilities. First, boundaries, they are here to make sure that you stick with in the game. Second, if another unit is on a territory it knows how to handle it. And last, you keep track of which player owns a territory.
 
-#Units
+####Units
+
 
 Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another players� unit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
 
