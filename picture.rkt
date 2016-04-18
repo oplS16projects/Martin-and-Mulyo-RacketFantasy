@@ -30,33 +30,33 @@
                              ;creates the rest of castle
                              victorian))
 ;The image where it goes water bridge water bridge....
-(define water_bridge(above
-                     (above
-                      (above
-                       (above
-                        (above
-                         (above(rectangle 60 70 "solid" "blue")
+(define water_bridge(beside
+                     (beside
+                      (beside
+                       (beside
+                        (beside
+                         (beside(rectangle 70 60 "solid" "blue")
          
-                               (rectangle 60 90 "solid" (make-color 75 54 33)))
-                         (rectangle 60 95 "solid" "blue"))
-                        (rectangle 60 90 "solid" (make-color 75 54 33)))
-                       (rectangle 60 95 "solid" "blue"))
-                      (rectangle 60 90 "solid" (make-color 75 54 33)))
-                     (rectangle 60 70 "solid" "blue")))
+                               (rectangle 90 60 "solid" (make-color 75 54 33)))
+                         (rectangle 95 60 "solid" "blue"))
+                        (rectangle 90 60 "solid" (make-color 75 54 33)))
+                       (rectangle 95 60 "solid" "blue"))
+                      (rectangle 90 60 "solid" (make-color 75 54 33)))
+                     (rectangle 70 60 "solid" "blue")))
 
-(define middle_board(beside(beside water_bridge (rectangle 600 600 "solid" "darkgreen"))water_bridge))
+(define middle_board(above(above water_bridge (rectangle 600 600 "solid" "darkgreen"))water_bridge))
 
 ;
-(define game_board(overlay/align "center" "top" (beside
-                   (beside
+(define game_board(overlay/align "center" "top" (above
+                   (above
                     ;Left Castle
-                    (rotate 90 castle)
+                    castle
                     ;Middle Game board piece
                     middle_board)
                    ;Right caslte Piece
-                   (rotate 270 castle))
+                    (rotate 180 castle))
                      ;Game board bottom      
-                    (overlay/align "center" "bottom" (overlay/offset (place-image (text "Player 1" 24 "white") 75 25 (rectangle 400 180 "solid" "blue"))800 0  (place-image (text "Player 2" 24 "white") 75 25 (rectangle 400 180 "solid" "red")))(rectangle 1500 800 "solid" "gray"))))
+                    (overlay/align "center" "bottom" (overlay/offset (place-image (text "Player 1" 24 "white") 75 25 (rectangle 400 180 "solid" "blue"))1000 0  (place-image (text "Player 2" 24 "white") 75 25 (rectangle 400 180 "solid" "red")))(rectangle 1500 1500 "solid" "gray"))))
 ;Calling gameboard
 ;game_board
 
@@ -80,10 +80,15 @@
 (define (player_object balance)
   ;Setting default value for territory count
   (define t_count 0)       ; territory count
-  (define active_player 1) ; active player. 1 Means acctive, 0 means not active
+  (define active_player "on") ; "on" active,
+                              ; "off" not active
 
-  (define (active_player_on) (set! active_player 1)active_player)
-  (define (active_player_off) (set! active_player 0)active_player)
+  (define (active_player_toggle)
+    (if (eq? "off" active_player)
+        (begin (set! active_player "on")active_player)
+    (begin (set! active_player "off")active_player)))
+  
+  ;(define (active_player_off) (set! active_player 0)active_player)
   ;;;;;;;;;;;;;;;;
   ;Decrease Income
   ;;;;;;;;;;;;;;;;
@@ -113,18 +118,25 @@
   ;Dispatch
   ;;;;;;;;;;;;;;;;;;;;
   (define (dispatch m)
-    (cond ((eq? m 'active_player_on) active_player_on)
-          ((eq? m 'active_player_off) active_player_off))
-    (if (= active_player 0)
-        (error "Player not active!")
-    (cond ((eq? m 'income_dec) income_dec)
-          ((eq? m 'income_inc) income_inc)
-          ((eq? m 'territory_count) territory_count)
-          ((eq? m 'get_territory_count) get_territory_count)
-          ((eq? m 'get_income_count) get_income_count)
-          (else
-           (error "Unknown Player Request"
-                  m)))))
+    (if (eq? active_player "on")
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;If "on" player can access their menu
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        (cond ((eq? m 'active_player_toggle) active_player_toggle)
+              ((eq? m 'income_dec) income_dec)
+              ((eq? m 'income_inc) income_inc)
+              ((eq? m 'territory_count) territory_count)
+              ((eq? m 'get_territory_count) get_territory_count)
+              ((eq? m 'get_income_count) get_income_count)
+              (else
+               (error "Unknown Player Request"
+                      m)))
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;Else check to see if game is trying to activate player,
+        ;If not then Player is not active.
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        (cond ((eq? m 'active_player_toggle) active_player_toggle)
+              (else (lambda (x) "Player not active")))))
   dispatch)
 
 (define a (player_object 0))
