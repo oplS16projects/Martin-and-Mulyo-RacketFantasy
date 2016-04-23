@@ -70,8 +70,7 @@ Territories have three main responsibilities. First, boundaries, they are here t
 
 ####Units
 
-
-Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another players� unit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
+Units main function are to move around the board and attack other enemy units. We want to make sure that other players cannot move another playersunit. We also want to keep track of how much movement a piece has made and at the beginning of their next turn it will reset so they have a fully functioning unit again.
 
 ### Game Flow
 <img src="game_flow.jpg">
