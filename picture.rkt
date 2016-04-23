@@ -1,1227 +1,226 @@
-#reader(lib"read.ss""wxme")WXME0108 ## 
-#|
-   This file uses the GRacket editor format.
-   Open this file in DrRacket version 6.3 or later to read it.
+#lang racket
 
-   Most likely, it was created by saving a program in DrRacket,
-   and it probably contains a program with non-text elements
-   (such as images or comment boxes).
 
-            http://racket-lang.org/
-|#
- 32 7 #"wxtext\0"
-3 1 6 #"wxtab\0"
-1 1 8 #"wximage\0"
-2 0 8 #"wxmedia\0"
-4 1 34 #"(lib \"syntax-browser.ss\" \"mrlib\")\0"
-1 0 16 #"drscheme:number\0"
-3 0 44 #"(lib \"number-snip.ss\" \"drscheme\" \"private\")\0"
-1 0 36 #"(lib \"comment-snip.ss\" \"framework\")\0"
-1 0 93
-(
- #"((lib \"collapsed-snipclass.ss\" \"framework\") (lib \"collapsed-sni"
- #"pclass-wxme.ss\" \"framework\"))\0"
-) 0 0 43 #"(lib \"collapsed-snipclass.ss\" \"framework\")\0"
-0 0 19 #"drscheme:sexp-snip\0"
-0 0 36 #"(lib \"cache-image-snip.ss\" \"mrlib\")\0"
-1 0 68
-(
- #"((lib \"image-core.ss\" \"mrlib\") (lib \"image-core-wxme.rkt\" \"mr"
- #"lib\"))\0"
-) 1 0 29 #"drscheme:bindings-snipclass%\0"
-1 0 101
-(
- #"((lib \"ellipsis-snip.rkt\" \"drracket\" \"private\") (lib \"ellipsi"
- #"s-snip-wxme.rkt\" \"drracket\" \"private\"))\0"
-) 2 0 88
-(
- #"((lib \"pict-snip.rkt\" \"drracket\" \"private\") (lib \"pict-snip.r"
- #"kt\" \"drracket\" \"private\"))\0"
-) 0 0 34 #"(lib \"bullet-snip.rkt\" \"browser\")\0"
-0 0 25 #"(lib \"matrix.ss\" \"htdp\")\0"
-1 0 22 #"drscheme:lambda-snip%\0"
-1 0 29 #"drclickable-string-snipclass\0"
-0 0 26 #"drracket:spacer-snipclass\0"
-0 0 57
-#"(lib \"hrule-snip.rkt\" \"macro-debugger\" \"syntax-browser\")\0"
-1 0 26 #"drscheme:pict-value-snip%\0"
-0 0 45 #"(lib \"image-snipr.ss\" \"slideshow\" \"private\")\0"
-1 0 38 #"(lib \"pict-snipclass.ss\" \"slideshow\")\0"
-2 0 55 #"(lib \"vertical-separator-snip.ss\" \"stepper\" \"private\")\0"
-1 0 18 #"drscheme:xml-snip\0"
-1 0 31 #"(lib \"xml-snipclass.ss\" \"xml\")\0"
-1 0 21 #"drscheme:scheme-snip\0"
-2 0 34 #"(lib \"scheme-snipclass.ss\" \"xml\")\0"
-1 0 10 #"text-box%\0"
-1 0 32 #"(lib \"text-snipclass.ss\" \"xml\")\0"
-1 0 1 6 #"wxloc\0"
-          0 0 57 0 1 #"\0"
-0 75 1 #"\0"
-0 10 90 -1 90 -1 3 -1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 255 255 255 1 -1 0 9
-#"Standard\0"
-0 75 12 #"Courier New\0"
-0 10 90 -1 90 -1 3 -1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 255 255 255 1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 -1 -1 2 24
-#"framework:default-color\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 255 255 255 -1 -1 2
-1 #"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 150 0 150 0 0 0 -1 -1 2 15
-#"text:ports out\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 150 0 150 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1.0 0 -1 -1 93 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 255 0 0 0 0 0 -1
--1 2 15 #"text:ports err\0"
-0 -1 1 #"\0"
-1 0 -1 -1 93 -1 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 175 0 0 0 -1 -1 2 17
-#"text:ports value\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 175 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1.0 0 92 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 34 139 34 0 0 0 -1
--1 2 27 #"Matching Parenthesis Style\0"
-0 -1 1 #"\0"
-1.0 0 92 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 34 139 34 0 0 0 -1
--1 2 1 #"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 38 38 128 0 0 0 -1 -1 2 37
-#"framework:syntax-color:scheme:symbol\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 38 38 128 0 0 0 -1 -1 2 38
-#"framework:syntax-color:scheme:keyword\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 38 38 128 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 194 116 31 0 0 0 -1 -1 2
-38 #"framework:syntax-color:scheme:comment\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 194 116 31 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 37
-#"framework:syntax-color:scheme:string\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 35
-#"framework:syntax-color:scheme:text\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 39
-#"framework:syntax-color:scheme:constant\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 132 60 36 0 0 0 -1 -1 2 49
-#"framework:syntax-color:scheme:hash-colon-keyword\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 132 60 36 0 0 0 -1 -1 2 42
-#"framework:syntax-color:scheme:parenthesis\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 132 60 36 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 36
-#"framework:syntax-color:scheme:error\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 36
-#"framework:syntax-color:scheme:other\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 16
-#"Misspelled Text\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 81 112 203 0 0 0 -1 -1 2
-38 #"drracket:check-syntax:lexically-bound\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 81 112 203 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 178 34 34 0 0 0 -1 -1 2 28
-#"drracket:check-syntax:set!d\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 178 34 34 0 0 0 -1 -1 2 37
-#"drracket:check-syntax:unused-require\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 36
-#"drracket:check-syntax:free-variable\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 68 0 203 0 0 0 -1 -1 2 31
-#"drracket:check-syntax:imported\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 68 0 203 0 0 0 -1 -1 2 47
-#"drracket:check-syntax:my-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 178 34 34 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 116 0 0 0 0 -1 -1 2 50
-#"drracket:check-syntax:their-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 116 0 0 0 0 -1 -1 2 48
-#"drracket:check-syntax:unk-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 139 142 28 0 0 0 -1 -1 2
-49 #"drracket:check-syntax:both-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 139 142 28 0 0 0 -1 -1 2
-26 #"plt:htdp:test-coverage-on\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 1 0 0 0 0 0 0 255 165 0 0 0 0 -1 -1 2 27
-#"plt:htdp:test-coverage-off\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 1 0 0 0 0 0 0 255 165 0 0 0 0 -1 -1 4 1
-#"\0"
-0 70 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 4 4 #"XML\0"
-0 70 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 2 37 #"plt:module-language:test-coverage-on\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 38
-#"plt:module-language:test-coverage-off\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 93 -1 -1 0 1 0 0 0 1 0 0 0 0 0 0 255 165 0 0 0 0 -1 -1 4 1
-#"\0"
-0 71 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 4 1 #"\0"
-0 -1 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 1 0 0 0 0 0 0 0 0 1.0 1.0 1.0 0 0 255 0 0 0 -1
--1 4 1 #"\0"
-0 71 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 1 0 0 0 0 0 0 0 0 1.0 1.0 1.0 0 0 255 0 0 0 -1
--1 4 1 #"\0"
-0 71 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 0 100 0 0 0 0 -1
--1 2 1 #"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 200 0 0 0 0 0 -1 -1 4 1
-#"\0"
-0 -1 1 #"\0"
-1.0 0 92 -1 -1 -1 -1 -1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 255 255 0 -1 -1
-          0 993 0 28 3 12 #"#lang racket"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 7 #"require"
-0 0 24 3 1 #" "
-0 0 14 3 11 #"2htdp/image"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 21 #"; Above the rectangle"
-0 0 24 29 1 #"\n"
-0 0 17 3 29 #"; Triangles beside each other"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 19 #";Castle with towers"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 9 #"victorian"
-0 0 24 3 23 #"                       "
-0 0 17 3 40 #"; Left rectangle                        "
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 14 3 5 #"above"
-0 0 24 3 2 #" ("
-0 0 14 3 14 #"overlay/offset"
-0 0 24 3 1 #"("
-0 0 14 3 14 #"overlay/offset"
-0 0 24 3 2 #" ("
-0 0 14 3 5 #"above"
-0 0 24 3 2 #" ("
-0 0 14 3 8 #"triangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"60"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"red\""
-0 0 24 3 2 #")("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"30"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"40"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 9 #"\"dimgray\""
-0 0 24 3 2 #"))"
-0 0 21 3 3 #"190"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 29 1 #"\n"
-0 0 24 3 40 #"                                        "
-0 0 17 3 18 #"; middle Rectangle"
-0 0 24 29 1 #"\n"
-0 0 24 3 41 #"                                        ("
-0 0 14 3 5 #"above"
-0 0 24 3 2 #" ("
-0 0 14 3 8 #"triangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"60"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"red\""
-0 0 24 3 2 #")("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"30"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"40"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 9 #"\"dimgray\""
-0 0 24 3 3 #")))"
-0 0 21 3 3 #"280"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 29 1 #"\n"
-0 0 24 3 40 #"                                        "
-0 0 17 3 16 #";right rectangle"
-0 0 24 29 1 #"\n"
-0 0 24 3 41 #"                                        ("
-0 0 14 3 5 #"above"
-0 0 24 3 2 #" ("
-0 0 14 3 8 #"triangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"60"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"red\""
-0 0 24 3 2 #")("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"30"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"40"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 9 #"\"dimgray\""
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 3 10 #"         ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"600"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"100"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 9 #"\"dimgray\""
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 17 3 20 #";so we can call door"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 4 #"door"
-0 0 24 3 2 #" ("
-0 0 14 3 13 #"overlay/align"
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"center\""
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"bottom\""
-0 0 24 3 2 #" ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"40"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"40"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"brown\""
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 29 #"                            ("
-0 0 14 3 6 #"rotate"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"180"
-0 0 24 3 1 #"("
-0 0 14 3 7 #"ellipse"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"40"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"60"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"brown\""
-0 0 24 3 4 #"))))"
-0 0 24 29 1 #"\n"
-0 0 17 3 31 #";TO DO: Use (frame...) for bars"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 14 #"door-with-knob"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 14 3 13 #"overlay/align"
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"center\""
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"center\""
-0 0 24 3 2 #" ("
-0 0 14 3 6 #"circle"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"6"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"yellow\""
-0 0 24 3 3 #")  "
-0 0 14 3 4 #"door"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 22 #";Create bottom picture"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"castle"
-0 0 24 3 1 #"("
-0 0 14 3 13 #"overlay/align"
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"center\""
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"bottom\""
-0 0 24 29 1 #"\n"
-0 0 24 3 29 #"                             "
-0 0 17 3 21 #"; creates three doors"
-0 0 24 29 1 #"\n"
-0 0 24 3 30 #"                             ("
-0 0 14 3 14 #"overlay/offset"
-0 0 24 3 2 #" ("
-0 0 14 3 14 #"overlay/offset"
-0 0 24 3 1 #" "
-0 0 14 3 14 #"door-with-knob"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"190"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 3 1 #" "
-0 0 14 3 14 #"door-with-knob"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 45 #"                                             "
-0 0 21 3 3 #"280"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 3 1 #" "
-0 0 14 3 14 #"door-with-knob"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 29 #"                             "
-0 0 17 3 27 #";creates the rest of castle"
-0 0 24 29 1 #"\n"
-0 0 24 3 29 #"                             "
-0 0 14 3 9 #"victorian"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 17 3 54 #";The image where it goes water bridge water bridge...."
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 12 #"water_bridge"
-0 0 24 3 1 #"("
-0 0 14 3 6 #"beside"
-0 0 24 29 1 #"\n"
-0 0 24 3 22 #"                     ("
-0 0 14 3 6 #"beside"
-0 0 24 29 1 #"\n"
-0 0 24 3 23 #"                      ("
-0 0 14 3 6 #"beside"
-0 0 24 29 1 #"\n"
-0 0 24 3 24 #"                       ("
-0 0 14 3 6 #"beside"
-0 0 24 29 1 #"\n"
-0 0 24 3 25 #"                        ("
-0 0 14 3 6 #"beside"
-0 0 24 29 1 #"\n"
-0 0 24 3 26 #"                         ("
-0 0 14 3 6 #"beside"
-0 0 24 3 1 #"("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"70"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 6 #"\"blue\""
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 9 #"         "
-0 0 24 29 1 #"\n"
-0 0 24 3 32 #"                               ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"90"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 2 #" ("
-0 0 14 3 10 #"make-color"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"75"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"54"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"33"
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 3 26 #"                         ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"95"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 6 #"\"blue\""
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 25 #"                        ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"90"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 2 #" ("
-0 0 14 3 10 #"make-color"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"75"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"54"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"33"
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 3 24 #"                       ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"95"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 6 #"\"blue\""
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 23 #"                      ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"90"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 2 #" ("
-0 0 14 3 10 #"make-color"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"75"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"54"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"33"
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 3 22 #"                     ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"70"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"45"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 6 #"\"blue\""
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 12 #"middle_board"
-0 0 24 3 1 #"("
-0 0 14 3 5 #"above"
-0 0 24 3 1 #"("
-0 0 14 3 5 #"above"
-0 0 24 3 1 #" "
-0 0 14 3 12 #"water_bridge"
-0 0 24 3 2 #" ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"600"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"300"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 11 #"\"darkgreen\""
-0 0 24 3 2 #"))"
-0 0 14 3 12 #"water_bridge"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 1 #";"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 10 #"game_board"
-0 0 24 3 1 #"("
-0 0 14 3 13 #"overlay/align"
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"center\""
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"top\""
-0 0 24 3 2 #" ("
-0 0 14 3 5 #"above"
-0 0 24 29 1 #"\n"
-0 0 24 3 20 #"                   ("
-0 0 14 3 5 #"above"
-0 0 24 29 1 #"\n"
-0 0 24 3 20 #"                    "
-0 0 17 3 11 #";Top Castle"
-0 0 24 29 1 #"\n"
-0 0 24 3 20 #"                    "
-0 0 14 3 6 #"castle"
-0 0 24 29 1 #"\n"
-0 0 24 3 20 #"                    "
-0 0 17 3 24 #";Middle Game board piece"
-0 0 24 29 1 #"\n"
-0 0 24 3 20 #"                    "
-0 0 14 3 12 #"middle_board"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 19 #"                   "
-0 0 17 3 21 #";Bottomt caslte Piece"
-0 0 24 29 1 #"\n"
-0 0 24 3 21 #"                    ("
-0 0 14 3 6 #"rotate"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"180"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"castle"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 21 #"                     "
-0 0 17 3 24 #";Game board bottom      "
-0 0 24 29 1 #"\n"
-0 0 24 3 21 #"                    ("
-0 0 14 3 13 #"overlay/align"
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"center\""
-0 0 24 3 1 #" "
-0 0 19 3 8 #"\"bottom\""
-0 0 24 3 2 #" ("
-0 0 14 3 14 #"overlay/offset"
-0 0 24 3 2 #" ("
-0 0 14 3 11 #"place-image"
-0 0 24 3 2 #" ("
-0 0 14 3 4 #"text"
-0 0 24 3 1 #" "
-0 0 19 3 10 #"\"Player 1\""
-0 0 24 3 1 #" "
-0 0 21 3 2 #"24"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"white\""
-0 0 24 3 2 #") "
-0 0 21 3 2 #"75"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"25"
-0 0 24 3 2 #" ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"400"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"180"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 6 #"\"blue\""
-0 0 24 3 2 #"))"
-0 0 21 3 4 #"1050"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 3 3 #"  ("
-0 0 14 3 11 #"place-image"
-0 0 24 3 2 #" ("
-0 0 14 3 4 #"text"
-0 0 24 3 1 #" "
-0 0 19 3 10 #"\"Player 2\""
-0 0 24 3 1 #" "
-0 0 21 3 2 #"24"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"white\""
-0 0 24 3 2 #") "
-0 0 21 3 2 #"75"
-0 0 24 3 1 #" "
-0 0 21 3 2 #"25"
-0 0 24 3 2 #" ("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"400"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"180"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"red\""
-0 0 24 3 4 #")))("
-0 0 14 3 9 #"rectangle"
-0 0 24 3 1 #" "
-0 0 21 3 4 #"1500"
-0 0 24 3 1 #" "
-0 0 21 3 3 #"825"
-0 0 24 3 1 #" "
-0 0 19 3 7 #"\"solid\""
-0 0 24 3 1 #" "
-0 0 19 3 6 #"\"gray\""
-0 0 24 3 4 #"))))"
-0 0 24 29 1 #"\n"
-0 0 17 3 18 #";Calling gameboard"
-0 0 24 29 1 #"\n"
-0 0 17 3 11 #";game_board"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 21 #";(define player_obj m"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 25 #";(beside/align \"baseline\""
-0 0 24 29 1 #"\n"
-0 0 17 3 40 #";                (text \"ijy\" 18 \"black\")"
-0 0 24 29 1 #"\n"
-0 0 17 3 41 #";                (text \"ijy\" 24 \"black\"))"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 190
-(
- #";(overlay/offset (place-image (text \"Player 1\" 24 \"white\") 75 25"
- #" (rectangle 400 180 \"solid\" \"blue\"))400 0  (place-image (text \""
- #"Player 2\" 24 \"white\") 75 25 (rectangle 400 180 \"solid\" \"red\")"
- #"))"
-) 0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
-0 0 17 3 47 #";;;;;;;;;;;;;Player Object;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 17 3 19 #";Setting up player "
-0 0 24 29 1 #"\n"
-0 0 17 3 27 #";var balance = player money"
-0 0 24 29 1 #"\n"
-0 0 17 3 37 #";var t_count = plater territory count"
-0 0 24 29 1 #"\n"
-0 0 17 3 75
-(
- #";var active_player  = Turn ON/OFF, can player spend income and build"
- #" units?"
-) 0 0 24 29 1 #"\n"
-0 0 17 3 1 #";"
-0 0 24 29 1 #"\n"
-0 0 17 3 46 #";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 13 #"player_object"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 33 #";Setting default variable values "
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"t_count"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 3 12 #")           "
-0 0 17 3 17 #"; territory count"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 13 #"active_player"
-0 0 24 3 1 #" "
-0 0 19 3 4 #"\"on\""
-0 0 24 3 2 #") "
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 22 #";;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 21 #";Toggle active_player"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 14 #"; \"on\" active,"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 18 #"; \"off\" not active"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 22 #";;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 5 #"    ("
-0 0 14 3 2 #"if"
-0 0 24 3 2 #" ("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"off\""
-0 0 24 3 1 #" "
-0 0 14 3 13 #"active_player"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 9 #"        ("
-0 0 15 3 5 #"begin"
-0 0 24 3 2 #" ("
-0 0 14 3 4 #"set!"
-0 0 24 3 1 #" "
-0 0 14 3 13 #"active_player"
-0 0 24 3 1 #" "
-0 0 19 3 4 #"\"on\""
-0 0 24 3 1 #")"
-0 0 14 3 13 #"active_player"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 5 #"    ("
-0 0 15 3 5 #"begin"
-0 0 24 3 2 #" ("
-0 0 14 3 4 #"set!"
-0 0 24 3 1 #" "
-0 0 14 3 13 #"active_player"
-0 0 24 3 1 #" "
-0 0 19 3 5 #"\"off\""
-0 0 24 3 1 #")"
-0 0 14 3 13 #"active_player"
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 16 #";;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 16 #";Decrease Income"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 16 #";;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 10 #"income_dec"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 5 #"    ("
-0 0 14 3 2 #"if"
-0 0 24 3 2 #" ("
-0 0 14 3 2 #">="
-0 0 24 3 1 #" "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 9 #"        ("
-0 0 15 3 5 #"begin"
-0 0 24 3 2 #" ("
-0 0 14 3 4 #"set!"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"balance"
-0 0 24 3 2 #" ("
-0 0 14 3 1 #"-"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 15 #"               "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 19 3 20 #"\"Insufficient funds\""
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 16 #";;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 16 #";Increase Income"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 16 #";;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 10 #"income_inc"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 5 #"    ("
-0 0 14 3 4 #"set!"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"balance"
-0 0 24 3 2 #" ("
-0 0 14 3 1 #"+"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 4 #"    "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 19 #";;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 16 #"get_income_count"
-0 0 24 3 2 #") "
-0 0 14 3 7 #"balance"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";Set territory count"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";Get territory count"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 15 #"territory_count"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 5 #"    ("
-0 0 14 3 4 #"set!"
-0 0 24 3 1 #" "
-0 0 14 3 7 #"t_count"
-0 0 24 3 1 #" "
-0 0 14 3 6 #"amount"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 4 #"    "
-0 0 14 3 7 #"t_count"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 19 #"get_territory_count"
-0 0 24 3 1 #")"
-0 0 14 3 7 #"t_count"
-0 0 24 3 7 #")      "
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 9 #";Dispatch"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 17 3 20 #";;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 3 #"  ("
-0 0 15 3 6 #"define"
-0 0 24 3 2 #" ("
-0 0 14 3 8 #"dispatch"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 5 #"    ("
-0 0 14 3 2 #"if"
-0 0 24 3 2 #" ("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 13 #"active_player"
-0 0 24 3 1 #" "
-0 0 19 3 4 #"\"on\""
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 27 #";;;;;;;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 37 #";If \"on\" player can access their menu"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 28 #";;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 9 #"        ("
-0 0 15 3 4 #"cond"
-0 0 24 3 3 #" (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 2 #") "
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 16 #"              (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 10 #"income_dec"
-0 0 24 3 2 #") "
-0 0 14 3 10 #"income_dec"
-0 0 24 3 21 #")                    "
-0 0 17 3 21 #";Sets income decrease"
-0 0 24 29 1 #"\n"
-0 0 24 3 16 #"              (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 10 #"income_inc"
-0 0 24 3 2 #") "
-0 0 14 3 10 #"income_inc"
-0 0 24 3 21 #")                    "
-0 0 17 3 20 #";Sets income increae"
-0 0 24 29 1 #"\n"
-0 0 24 3 16 #"              (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 15 #"territory_count"
-0 0 24 3 2 #") "
-0 0 14 3 15 #"territory_count"
-0 0 24 3 11 #")          "
-0 0 17 3 21 #";Sets territory count"
-0 0 24 29 1 #"\n"
-0 0 24 3 16 #"              (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 19 #"get_territory_count"
-0 0 24 3 2 #") "
-0 0 14 3 19 #"get_territory_count"
-0 0 24 3 3 #")  "
-0 0 17 3 31 #";return current territory count"
-0 0 24 29 1 #"\n"
-0 0 24 3 16 #"              (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 16 #"get_income_count"
-0 0 24 3 2 #") "
-0 0 14 3 16 #"get_income_count"
-0 0 24 3 9 #")        "
-0 0 17 3 23 #";return value of income"
-0 0 24 29 1 #"\n"
-0 0 24 3 15 #"              ("
-0 0 14 3 4 #"else"
-0 0 24 29 1 #"\n"
-0 0 24 3 16 #"               ("
-0 0 14 3 5 #"error"
-0 0 24 3 1 #" "
-0 0 19 3 24 #"\"Unknown Player Request\""
-0 0 24 29 1 #"\n"
-0 0 24 3 22 #"                      "
-0 0 14 3 1 #"m"
-0 0 24 3 3 #")))"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 35 #";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 56 #";Else check to see if game is trying to activate player,"
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 34 #";If not then Player is not active."
-0 0 24 29 1 #"\n"
-0 0 24 3 8 #"        "
-0 0 17 3 35 #";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 9 #"        ("
-0 0 15 3 4 #"cond"
-0 0 24 3 3 #" (("
-0 0 14 3 3 #"eq?"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"m"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 2 #") "
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 15 #"              ("
-0 0 14 3 4 #"else"
-0 0 24 3 2 #" ("
-0 0 15 3 6 #"lambda"
-0 0 24 3 2 #" ("
-0 0 14 3 1 #"x"
-0 0 24 3 2 #") "
-0 0 19 3 20 #"\"Player not active.\""
-0 0 24 3 6 #" )))))"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"  "
-0 0 14 3 8 #"dispatch"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 17 3 37 #";;;;Test code for player object;;;;;;"
-0 0 24 29 1 #"\n"
-0 0 24 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 24 3 1 #" "
-0 0 14 3 1 #"a"
-0 0 24 3 2 #" ("
-0 0 14 3 13 #"player_object"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"0"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 15 #"territory_count"
-0 0 24 3 1 #")"
-0 0 21 3 1 #"5"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 10 #"income_inc"
-0 0 24 3 1 #")"
-0 0 21 3 2 #"10"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 10 #"income_dec"
-0 0 24 3 1 #")"
-0 0 21 3 1 #"2"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 15 #"territory_count"
-0 0 24 3 1 #")"
-0 0 21 3 1 #"3"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 15 #"territory_count"
-0 0 24 3 1 #")"
-0 0 21 3 1 #"7"
-0 0 24 3 1 #")"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 20 #"active_player_toggle"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 24 3 2 #"(("
-0 0 14 3 1 #"a"
-0 0 24 3 1 #" "
-0 0 21 3 1 #"'"
-0 0 14 3 19 #"get_territory_count"
-0 0 24 3 2 #"))"
-0 0 24 29 1 #"\n"
-0 0 17 3 31 #";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-0           0
+(require 2htdp/image)
+ (require lang/posn)
+
+; Above the rectangle
+; Triangles beside each other
+
+
+;Castle with towers
+(define victorian                       ; Left rectangle                        
+  (above (overlay/offset(overlay/offset (above (triangle 60 "solid" "red")(rectangle 30 40 "solid" "dimgray"))190 0
+                                        ; middle Rectangle
+                                        (above (triangle 60 "solid" "red")(rectangle 30 40 "solid" "dimgray")))280 0
+                                        ;right rectangle
+                                        (above (triangle 60 "solid" "red")(rectangle 30 40 "solid" "dimgray")))
+         (rectangle 600 100 "solid" "dimgray")))
+;so we can call door
+(define door (overlay/align "center" "bottom" (rectangle 40 40 "solid" "brown")
+                            (rotate 180(ellipse 40 60 "solid" "brown"))))
+;TO DO: Use (frame...) for bars
+(define door-with-knob
+  (overlay/align "center" "center" (circle 6 "solid" "yellow")  door))
+
+;Create bottom picture
+(define castle(overlay/align "center" "bottom"
+                             ; creates three doors
+                             (overlay/offset (overlay/offset door-with-knob 190 0 door-with-knob)
+                                             280 0 door-with-knob)
+                             ;creates the rest of castle
+                             victorian))
+;The image where it goes water bridge water bridge....
+(define water_bridge(beside
+                     (beside
+                      (beside
+                       (beside
+                        (beside
+                         (beside(rectangle 70 45 "solid" "blue")
+         
+                               (rectangle 90 45 "solid" (make-color 75 54 33)))
+                         (rectangle 95 45 "solid" "blue"))
+                        (rectangle 90 45 "solid" (make-color 75 54 33)))
+                       (rectangle 95 45 "solid" "blue"))
+                      (rectangle 90 45 "solid" (make-color 75 54 33)))
+                     (rectangle 70 45 "solid" "blue")))
+
+(define middle_board(above(above water_bridge (rectangle 600 300 "solid" "darkgreen"))water_bridge))
+
+;
+(define game_board(overlay/align "center" "top" (above
+                   (above
+                    ;Top Castle
+                    castle
+                    ;Middle Game board piece
+                    middle_board)
+                   ;Bottomt caslte Piece
+                    (rotate 180 castle))
+                     ;Game board bottom      
+                    (overlay/align "center" "bottom" (overlay/offset (place-image (text "Player 1" 24 "white") 75 25 (rectangle 400 180 "solid" "blue"))1050 0  (place-image (text "Player 2" 24 "white") 75 25 (rectangle 400 180 "solid" "red")))(rectangle 1500 825 "solid" "gray"))))
+;Calling gameboard
+;game_board
+
+;(define player_obj m
+
+;(beside/align "baseline"
+;                (text "ijy" 18 "black")
+;                (text "ijy" 24 "black"))
+
+;(overlay/offset (place-image (text "Player 1" 24 "white") 75 25 (rectangle 400 180 "solid" "blue"))400 0  (place-image (text "Player 2" 24 "white") 75 25 (rectangle 400 180 "solid" "red")))
+
+;;;;;;;;;;;;;Player Object;;;;;;;;;;;;;;;;;;;;;
+;Setting up player 
+;var balance = player money
+;var t_count = plater territory count
+;var active_player  = Turn ON/OFF, can player spend income and build units?
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define (player_object balance)
+  ;Setting default variable values 
+  (define t_count 0)           ; territory count
+  (define active_player "on") 
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;Toggle active_player
+  ; "on" active,
+  ; "off" not active
+  ;;;;;;;;;;;;;;;;;;;;;;
+  (define (active_player_toggle)
+    (if (eq? "off" active_player)
+        (begin (set! active_player "on")active_player)
+    (begin (set! active_player "off")active_player)))
+  ;;;;;;;;;;;;;;;;
+  ;Decrease Income
+  ;;;;;;;;;;;;;;;;
+  (define (income_dec amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount))
+               balance)
+        "Insufficient funds"))
+  ;;;;;;;;;;;;;;;;
+  ;Increase Income
+  ;;;;;;;;;;;;;;;;
+  (define (income_inc amount)
+    (set! balance (+ balance amount))
+    balance)
+  ;;;;;;;;;;;;;;;;;;;
+  (define (get_income_count) balance)
+  ;;;;;;;;;;;;;;;;;;;;
+  ;Set territory count
+  ;Get territory count
+  ;;;;;;;;;;;;;;;;;;;;
+  (define (territory_count amount)
+    (set! t_count amount)
+    t_count)
+  ;;;;;;;;;;;;;;;;;;;;
+  (define (get_territory_count)t_count)      
+  ;;;;;;;;;;;;;;;;;;;;
+  ;Dispatch
+  ;;;;;;;;;;;;;;;;;;;;
+  (define (dispatch m)
+    (if (eq? active_player "on")
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;If "on" player can access their menu
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        (cond ((eq? m 'active_player_toggle) active_player_toggle)
+              ((eq? m 'income_dec) income_dec)                    ;Sets income decrease
+              ((eq? m 'income_inc) income_inc)                    ;Sets income increae
+              ((eq? m 'territory_count) territory_count)          ;Sets territory count
+              ((eq? m 'get_territory_count) get_territory_count)  ;return current territory count
+              ((eq? m 'get_income_count) get_income_count)        ;return value of income
+              (else
+               (error "Unknown Player Request"
+                      m)))
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;Else check to see if game is trying to activate player,
+        ;If not then Player is not active.
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        (cond ((eq? m 'active_player_toggle) active_player_toggle)
+              (else (lambda (x) "Player not active." )))))
+  dispatch)
+;;;;Test code for player object;;;;;;
+;(define a (player_object 0))
+;((a 'territory_count)5)
+;((a 'income_inc)10)
+;((a 'income_dec)2)
+;((a 'territory_count)3)
+;((a 'active_player_toggle))
+;((a 'territory_count)7)
+;((a 'active_player_toggle))
+;((a 'get_territory_count))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;-----------------------------------------------------------------------
+(define (unit_object current_moves SET_MAX_MOVES UNIT_COST PLAYER_OWNERSHIP UNIT_IMAGE)
+  ;(define MAX_MOVES SET_MAX_MOVES)
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;Moving unit check to see if how many moves are left on the unit.
+  ;If movement avaliable then use it.
+  ;;;;;;;;;;;;;;;;;;;;;;
+  (define (moving_unit)
+    ;TO DO: check "PLAYER_OWNERSHIP" to make sure you can't move opponent piece
+    (if (>= current_moves SET_MAX_MOVES)
+        "The max moves for this unit are spent" 
+        (begin (set! current_moves (+ current_moves 1))
+               current_moves)))
+  ;;;;;;;;;;;;;;;;
+  ;Reset "current_moves" to 0
+  ;Maybe when unit is created we create a list of unit_objects and we
+  ;can call this function on all of them
+  ;;;;;;;;;;;;;;;;
+  (define (reset_moves)
+        (begin (set! current_moves 0))
+               current_moves)
+    (define (display_unit_image)
+        (begin (set! current_moves 0))
+               current_moves)  
+  ;;;;;;;;;;;;;;;;;;;;
+  ;Dispatch
+  ;;;;;;;;;;;;;;;;;;;;
+  (define (dispatch m)
+    (cond ((eq? m 'moving_unit) moving_unit)
+          ((eq? m 'reset_moves) reset_moves)                   
+          ((eq? m 'display_unit_image) display_unit_image)                    
+          (else
+           (error "Unknown Player Request"
+                  m))))
+  dispatch)
+
+(define unit (unit_object 0 2 2 2 2))
+((unit 'moving_unit))
+((unit 'moving_unit))
+((unit 'moving_unit))
+((unit 'reset_moves))
+((unit 'moving_unit))
+((unit 'moving_unit))
+
+(define sword(overlay/offset (line 40 15 "black") +15 3 (line -15 15 "black")))
+
+(define body_red(overlay/offset (ellipse 20 20 "solid" "red")0 15
+                               (isosceles-triangle 40 30 "solid" "firebrick")))
+(define body_blue(overlay/offset (ellipse 20 20 "solid" "blue")0 15
+                                 (isosceles-triangle 40 30 "solid" "lightblue")))
+
+                                           ;Kind of the top of shield
+(define shield(rotate -90 (polygon (list (make-pulled-point 1/2 15 0 0 1/2 -15)
+                                           ;top left of shield          
+                                           (make-posn -5 12)
+                                           ;Kind of the bottom of shield
+                                           (make-pulled-point 1/2 -20 25 0 1/2 20)
+                                           ;top right of shield
+                                           (make-posn -5 -12))
+                                     "solid"
+                                     "burlywood")))
+
+(define unit1_blue (overlay/offset shield -30 0
+                     (overlay/offset sword 25 0
+                      body_blue)))
+(define unit1_red (overlay/offset shield -30 0
+                    (overlay/offset sword 25 0
+                     body_red)))
+
+
+unit1_blue
+
+unit1_red
+
