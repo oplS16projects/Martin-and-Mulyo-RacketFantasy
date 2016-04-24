@@ -215,12 +215,66 @@
 (define unit1_blue (overlay/offset shield -30 0
                      (overlay/offset sword 25 0
                       body_blue)))
+
 (define unit1_red (overlay/offset shield -30 0
                     (overlay/offset sword 25 0
                      body_red)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define weapon_flail_red(overlay/offset (above
+                              (above
+                               (above (ellipse 3 6 "outline" "black")
+                                      (ellipse 3 6 "outline" "black"))
+                               (ellipse 3 6 "outline" "black"))
+                              (star-polygon 5 10 3 "solid" "red")) 11 -10
+                              ;Handle of weapon                                               
+                              (rotate -20(rectangle 20 5 "solid" "black"))))
+                                   ;Head
+(define body_red2(overlay/offset (ellipse 20 20 "solid" (make-color 60  0 0)) 0 15
+                                   (overlay/offset
+                                    ;Body
+                                    (overlay/offset(rotate 180(isosceles-triangle 40 30 "solid" "red"))10 -11
+                                               ;Right Shoulder
+                                               (rotate -210(isosceles-triangle 30 25 "solid" "firebrick")))-16 -8
+                                               ;Left Shoulder
+                                               (rotate 208(isosceles-triangle 30 25 "solid" "firebrick")))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define weapon_flail_blue(overlay/offset (above
+                              (above
+                               (above (ellipse 3 6 "outline" "black")
+                                      (ellipse 3 6 "outline" "black"))
+                               (ellipse 3 6 "outline" "black"))
+                              (star-polygon 5 10 3 "solid" "blue")) 11 -10
+                              ;Handle of weapon                                               
+                              (rotate -20(rectangle 20 5 "solid" "black"))))
+
+(define body_blue2(overlay/offset (ellipse 20 20 "solid" (make-color 0  0 60)) 0 15
+                                   (overlay/offset
+                                    ;Body
+                                    (overlay/offset(rotate 180(isosceles-triangle 40 30 "solid" (make-color 0  80 240)))10 -11
+                                               ;Right Shoulder
+                                               (rotate -210(isosceles-triangle 30 25 "solid" (make-color 0  0 180))))-16 -8
+                                               ;Left Shoulder
+                                               (rotate 208(isosceles-triangle 30 25 "solid" (make-color 0  0 180))))))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define unit2_red(overlay/offset shield -20 -2
+                                 (overlay/offset weapon_flail_red 20 -7
+                                                 body_red2)))
+(define unit2_blue(overlay/offset shield -20 -2
+                                 (overlay/offset weapon_flail_blue 20 -7
+                                                 body_blue2)))
+
+
+unit2_red
+unit2_blue
 
 unit1_blue
 
 unit1_red
+
+
 
