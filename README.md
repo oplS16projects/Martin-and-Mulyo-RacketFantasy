@@ -147,6 +147,7 @@ Units main function are to move around the board and attack other enemy units. W
                     ((eq? 'currentImage message) currentImage)))
             dispatch)
 
+#Yusuf
 This code handles how the game is drawn on the screen. Since we mainly rely upon the function big-bang from 2htdp/universe, the function that can be put in to-draw could only be a one parameter function. So what we did was we made a background object called world that has the whole set of list at the start (define world (background tile-list)) and contain a procedure that takes in an integer and manipulates the list accordingly. Although we made some variable and functions local to the background object, we could've done better by having the background object contain all of the values and procedures we made so that none of the variables and procedure are global.
 
 
@@ -184,4 +185,5 @@ This code handles how the game is drawn on the screen. Since we mainly rely upon
                                          (error "Unknown Player Request"
                                                 m))))
                                 dispatch)
+#Martin
 The best part of this semester has been finding out how to make a "object" in racket. This is around the time I started understanding how racket actually works and how we coded mc-eval. The code above encapsualtes my learning process this semester in how evertyhing came togehter. This object holds the image and determins how many moves are left for the object and declares what it's max moves are.
