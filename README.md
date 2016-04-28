@@ -151,39 +151,39 @@ Units main function are to move around the board and attack other enemy units. W
 This code handles how the game is drawn on the screen. Since we mainly rely upon the function big-bang from 2htdp/universe, the function that can be put in to-draw could only be a one parameter function. So what we did was we made a background object called world that has the whole set of list at the start (define world (background tile-list)) and contain a procedure that takes in an integer and manipulates the list accordingly. Although we made some variable and functions local to the background object, we could've done better by having the background object contain all of the values and procedures we made so that none of the variables and procedure are global.
 
 
-                              (define (unit_object current_moves SET_MAX_MOVES UNIT_COST UNIT_IMAGE)
-                                ;(define MAX_MOVES SET_MAX_MOVES)
-                                ;;;;;;;;;;;;;;;;;;;;;;
-                                ;Moving unit check to see if how many moves are left on the unit.
-                                ;If movement avaliable then use it.
-                                ;;;;;;;;;;;;;;;;;;;;;;
-                                (define (moving_unit)
-                                  ;TO DO: check "PLAYER_OWNERSHIP" to make sure you can't move opponent piece
-                                  (if (>= current_moves SET_MAX_MOVES)
-                                      "The max moves for this unit are spent" 
-                                      (begin (set! current_moves (+ current_moves 1))
-                                             current_moves)))
-                                ;;;;;;;;;;;;;;;;
-                                ;Reset "current_moves" to 0
-                                ;Maybe when unit is created we create a list of unit_objects and we
-                                ;can call this function on all of them
-                                ;;;;;;;;;;;;;;;;
-                                (define (reset_moves)
-                                  (begin (set! current_moves 0)
-                                  current_moves))
-                                (define (display_unit_image)
-                                  (begin (set! current_moves 0)
-                                  current_moves))
-                                ;;;;;;;;;;;;;;;;;;;;
-                                ;Dispatch
-                                ;;;;;;;;;;;;;;;;;;;;
-                                (define (dispatch m)
-                                  (cond ((eq? m 'moving_unit) moving_unit)
-                                        ((eq? m 'reset_moves) reset_moves)                   
-                                        ((eq? m 'displayMoves) (- SET_MAX_MOVES current_moves))                    
-                                        (else
-                                         (error "Unknown Player Request"
-                                                m))))
-                                dispatch)
+          (define (unit_object current_moves SET_MAX_MOVES UNIT_COST UNIT_IMAGE)
+            ;(define MAX_MOVES SET_MAX_MOVES)
+            ;;;;;;;;;;;;;;;;;;;;;;
+            ;Moving unit check to see if how many moves are left on the unit.
+            ;If movement avaliable then use it.
+            ;;;;;;;;;;;;;;;;;;;;;;
+            (define (moving_unit)
+              ;TO DO: check "PLAYER_OWNERSHIP" to make sure you can't move opponent piece
+              (if (>= current_moves SET_MAX_MOVES)
+                  "The max moves for this unit are spent" 
+                  (begin (set! current_moves (+ current_moves 1))
+                         current_moves)))
+            ;;;;;;;;;;;;;;;;
+            ;Reset "current_moves" to 0
+            ;Maybe when unit is created we create a list of unit_objects and we
+            ;can call this function on all of them
+            ;;;;;;;;;;;;;;;;
+            (define (reset_moves)
+              (begin (set! current_moves 0)
+              current_moves))
+            (define (display_unit_image)
+              (begin (set! current_moves 0)
+              current_moves))
+            ;;;;;;;;;;;;;;;;;;;;
+            ;Dispatch
+            ;;;;;;;;;;;;;;;;;;;;
+            (define (dispatch m)
+              (cond ((eq? m 'moving_unit) moving_unit)
+                    ((eq? m 'reset_moves) reset_moves)                   
+                    ((eq? m 'displayMoves) (- SET_MAX_MOVES current_moves))                    
+                    (else
+                     (error "Unknown Player Request"
+                            m))))
+            dispatch)
 ####Martin
-The best part of this semester has been finding out how to make a "object" in racket. This is around the time I started understanding how racket actually works and how we coded mc-eval. The code above encapsualtes my learning process this semester in how evertyhing came togehter. This object holds the image and determins how many moves are left for the object and declares what it's max moves are.
+The best part of this semester has been finding out how to make a "object" in racket. This is around the time I started understanding how racket actually works and how mc-eval worked. The code above encapsualtes my learning process this semester in how evertyhing came togehter. This object above creates the unit object  of the game it holds the image of the unit, determins how many moves are left for the object and declares what it's max moves are. When you create a unit is put into a lst
