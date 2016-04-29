@@ -2523,7 +2523,7 @@
 0 0 24 3 2 #" ("
 0 0 14 3 4 #"text"
 0 0 24 3 1 #" "
-0 0 19 3 29 #"\"Press space bar to end turn\""
+0 0 19 3 28 #"\"Press spacebar to end turn\""
 0 0 24 3 1 #" "
 0 0 21 3 2 #"24"
 0 0 24 3 1 #" "
